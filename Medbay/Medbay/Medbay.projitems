@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{5A004273-CEB3-4286-9048-49B674BABC67}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Medbay</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LoginPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ForgotPasswordPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)HomePage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)RegisterPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)WelcomePage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ShopDrugPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AdvertPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CheckOutPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ShopHerbalPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ShopSundriesPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ShopDevicesPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)SettingsPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)DealsPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)DealQuantityPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ShopDealPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PostAdPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PostNeedPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)RegisterPage.xaml.cs">
+      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)usedclasses\DealCart.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)usedclasses\ItemCart.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)usedclasses\SearchCart.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ShopDrugPage.xaml.cs">
+      <DependentUpon>ShopDrugPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AdvertPage.xaml.cs">
+      <DependentUpon>AdvertPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CheckOutPage.xaml.cs">
+      <DependentUpon>CheckOutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ShopHerbalPage.xaml.cs">
+      <DependentUpon>ShopHerbalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ShopSundriesPage.xaml.cs">
+      <DependentUpon>ShopSundriesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ShopDevicesPage.xaml.cs">
+      <DependentUpon>ShopDevicesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DealsPage.xaml.cs">
+      <DependentUpon>DealsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DealQuantityPage.xaml.cs">
+      <DependentUpon>DealQuantityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ShopDealPage.xaml.cs">
+      <DependentUpon>ShopDealPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PostAdPage.xaml.cs">
+      <DependentUpon>PostAdPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PostNeedPage.xaml.cs">
+      <DependentUpon>PostNeedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)usedclasses\GetOnlineRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)usedclasses\SessionStorage.cs" />
+  </ItemGroup>
+</Project>

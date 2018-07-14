@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.ShopDrugPage">
+    <ContentPage.Content>
+
+
+        <StackLayout>
+
+            <StackLayout  Padding="10" BackgroundColor="#fe0002" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image Source="backwhite.png" HorizontalOptions="StartAndExpand"  WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="GoToHome"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Text="Shop Drugs" FontSize="25" TextColor="White" HorizontalOptions="CenterAndExpand"
+                    />
+                    <Image Source="basket.png" HorizontalOptions="EndAndExpand" Margin="0,0,-10,0" WidthRequest="30"/>
+                    <Button HorizontalOptions="EndAndExpand" WidthRequest="40" HeightRequest="40" BorderRadius="20"
+                   Text="0"  x:Name="cartcount" />
+                </StackLayout>
+                
+                
+            </StackLayout>
+
+            
+            <StackLayout Padding="0,-2,0,0" Orientation="Horizontal"  HorizontalOptions="FillAndExpand" >
+               
+                    <SearchBar  Placeholder="Search an item..." 
+                                            PlaceholderColor="Gray" 
+                                            TextColor="Black"
+                                            HorizontalOptions="FillAndExpand"    
+                                            HeightRequest="40"
+                                            BackgroundColor="#f4f9f7"
+                                            x:Name="SearchContent"
+                                            TextChanged="SearchContent_TextChanged"/>
+
+               
+                  
+               
+            </StackLayout>
+            
+           
+            <StackLayout Padding="25,0,10,0"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" >
+                <Entry Keyboard="Numeric" HorizontalTextAlignment="Center" Placeholder="Enter Qty" TextColor="Black" WidthRequest="100" FontSize="12" x:Name="Quantity"/>
+                <Entry Keyboard="Numeric"  IsEnabled="False" HorizontalTextAlignment="Center" BackgroundColor="#efeded" WidthRequest="100"  PlaceholderColor="Black"  TextColor="Black" x:Name="Amount1"/>
+                <Label IsVisible="False" x:Name="instock" />
+                <Label IsVisible="False" x:Name="prodid"/>
+                <Label IsVisible="False" x:Name="Amount"/>
+                <Label IsVisible="False" x:Name="img"/>
+                <Label IsVisible="False" x:Name="token"/>
+                <Button Text="Add to cart"  Clicked="Add"  TextColor="White" BackgroundColor="#f65058" />
+
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="10,0,10,0" x:Name="searchcartheader">
+                <StackLayout Padding="5,10,10,5" HorizontalOptions="FillAndExpand" >
+                    <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="Product"  Font="Bold" HorizontalTextAlignment="Start" FontSize="13"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Supplier" Font="Bold" HorizontalTextAlignment="Start" FontSize="13" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="EndAndExpand">
+                            <Label Text="Stock Count" Font="Bold" HorizontalTextAlignment="Start" FontSize="13"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+
+
+            </StackLayout>
+            <StackLayout Padding="5,0,5,0"  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" >
+                <Grid>
+                    <ListView x:Name="ProductList"  ItemTapped="ProductList_ItemTapped" HasUnevenRows="True" HeightRequest="300">
+                        <ListView.ItemTemplate >
+                            <DataTemplate >
+                                <ViewCell  >
+                                    <StackLayout Padding="5,10,10,5" HorizontalOptions="FillAndExpand" >
+                                        <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+
+                                            <StackLayout HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding ProdName}" Margin="0,10,0,0" HorizontalTextAlignment="Start" FontSize="12"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding Manufacturer}" Margin="0,10,0,0" HorizontalTextAlignment="Start" FontSize="12" TextColor="#215fc4" HorizontalOptions="CenterAndExpand" />
+
+                                            </StackLayout>
+
+                                            <StackLayout HorizontalOptions="EndAndExpand">
+                                                <Label Text="{Binding Instock}" Margin="0,10,0,0" HorizontalTextAlignment="Start" FontSize="12"  TextColor="#215fc4" HorizontalOptions="CenterAndExpand" />
+
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </StackLayout>
+
+            <StackLayout  Margin="0,5,0,0" Orientation="Vertical" IsVisible="False" HorizontalOptions="Center" x:Name="stackhide">
+                <Label Text="Please wait..."/>
+                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="true" IsVisible="true" HorizontalOptions="Center"/>
+            </StackLayout>
+
+
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="10,0,10,0" x:Name="cartheader">
+                <StackLayout Padding="5,10,10,5" HorizontalOptions="FillAndExpand" >
+                    <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="No"  Font="Bold" HorizontalTextAlignment="Start" FontSize="13"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="Product" Font="Bold" HorizontalTextAlignment="Start" FontSize="13" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Qty" Font="Bold" HorizontalTextAlignment="Start" FontSize="13" TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Total" Font="Bold" HorizontalTextAlignment="Start" FontSize="13"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                        </StackLayout>
+                        
+                        <StackLayout HorizontalOptions="EndAndExpand">
+                            
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+
+
+            </StackLayout>
+
+            <StackLayout Padding="10,0,10,0"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" >
+                <ListView x:Name="lst"  HasUnevenRows="true" 
+                  >
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell  >
+                                <StackLayout Padding="5,10,10,5" HorizontalOptions="FillAndExpand" >
+                                    <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
+                                        <StackLayout HorizontalOptions="Start" >
+                                            <Label Text="{Binding No}" Margin="0,10,0,0" Font="Bold,15"   TextColor="Black"/>
+                                          
+                                        </StackLayout>
+
+                                        <StackLayout  HorizontalOptions="StartAndExpand" >
+                                            <Image Source="{Binding Img}" WidthRequest="40" HeightRequest="40"/>
+
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding ItemName}" Margin="0,10,0,0"  HorizontalTextAlignment="Start" FontSize="15"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="CenterAndExpand">
+                                            <Label Text="{Binding ItemQuantity}" Margin="0,10,0,0" HorizontalTextAlignment="Start" FontSize="15" TextColor="Brown" HorizontalOptions="CenterAndExpand" />
+
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="CenterAndExpand">
+                                            <Label Text="{Binding ItemTotal}" Margin="0,10,0,0" HorizontalTextAlignment="Start" FontSize="15"  TextColor="Black" HorizontalOptions="CenterAndExpand" />
+
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="End">
+                                            <Button CommandParameter="{Binding Id}" Text="X" WidthRequest="33" HeightRequest="40" HorizontalOptions="End" FontSize="15" TextColor="White" BackgroundColor="#fe0002" Clicked="DeleteItem">
+                                              
+                                            </Button>
+                                          <!--
+                                                 <Image Source="trash.png" Margin="0,8,0,0" WidthRequest="25" HorizontalOptions="End"/>
+                                                   <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                            Tapped="DeleteItem"
+                                                            CommandParameter="{Binding Id}"
+                                                            NumberOfTapsRequired="1" />
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            
+                                           -->
+                                         </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+
+
+
+
+            <StackLayout Padding="0,10,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="   Total : GHS 0.00   " x:Name="totalcost" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#fe0002"/>
+                    <Button Text="   CheckOut   "  Clicked="Confirm" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#3255A4"/>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

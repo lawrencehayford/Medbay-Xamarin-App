@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.AdvertPage" >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout  Padding="10" BackgroundColor="#fe0002" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image Source="backwhite.png" HorizontalOptions="StartAndExpand"  WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="GoToHome"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Text="Deal Of The Day" Margin="0,0,0,0" FontSize="25" TextColor="White" HorizontalOptions="StartAndExpand"
+                    />
+                   
+                </StackLayout>
+               
+                
+            </StackLayout>
+
+            <StackLayout  Margin="0,30,0,0" Orientation="Vertical"  HorizontalOptions="Center" x:Name="stackhide">
+                <Label Text="Please wait..."/>
+                <ActivityIndicator x:Name="ActivityIndicator" IsRunning="true" IsVisible="true" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Margin="0,-6,0,0" >
+                <WebView  x:Name="adlink" Source="http://www.mymedbay.com/larahome/public/adverts"  
+                     HeightRequest="1000"
+                        WidthRequest="900"  Navigated="OnNavigated"/>
+            </StackLayout>
+
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

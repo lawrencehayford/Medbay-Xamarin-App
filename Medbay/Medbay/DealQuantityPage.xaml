@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.DealQuantityPage" >
+    <ContentPage.Content>
+
+
+        <StackLayout>
+            <StackLayout  Padding="10" BackgroundColor="#fe0002" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image Source="backwhite.png" HorizontalOptions="StartAndExpand"  WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="GoToHome"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Text="Deal Of The Day" FontSize="25" TextColor="White" HorizontalOptions="StartAndExpand"
+                    />
+                  
+                </StackLayout>
+
+
+            </StackLayout>
+
+
+
+            <StackLayout Padding="15,10,15,0" Orientation="Vertical">
+                <Label Text="Enter Quantity"  HorizontalOptions="Center" TextColor="Blue" FontSize="13"/>
+                <Entry x:Name="quantity" HorizontalOptions="Center" WidthRequest="300" Keyboard="Numeric" HorizontalTextAlignment="Center" PlaceholderColor="Black" FontSize="12"/>
+            </StackLayout>
+
+            <StackLayout Padding="0,10,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand" >
+                <StackLayout Orientation="Horizontal">
+                    
+                    <Button Text="   Add To Cart   "  Clicked="Confirm" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#3255A4"/>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Medbay"
+             x:Class="Medbay.MainPage"  BackgroundColor="#fe0002">
+
+
+    <StackLayout
+      Spacing="5"
+      Padding="20"
+      VerticalOptions="Center" >
+        <Image
+            Source="logo.jpeg" WidthRequest="100"/>
+
+        <Label Text="Please wait..." VerticalOptions="End" HorizontalTextAlignment="Center" TextColor="White" FontSize="10"/>
+
+
+
+        <Grid>
+            <ProgressBar x:Name="MainProgressBar" Margin="20" Progress="0.1" WidthRequest="100" HeightRequest="20"  HorizontalOptions="Center"  ></ProgressBar>
+        </Grid>
+
+
+    </StackLayout>
+
+
+</ContentPage>

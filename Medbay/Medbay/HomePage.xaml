@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.HomePage">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout Padding="10,10,0,10" BackgroundColor="#fe0002" >
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+                <Image Source="user_circle.png" WidthRequest="70"    x:Name="PhotoImage2" Aspect="AspectFit"  />
+                <Label TextColor="#ffffff"   x:Name="Myname" FontSize="15"/>
+                    <Image Source="power.png" WidthRequest="30"  HorizontalOptions="EndAndExpand" Margin="0,-10,20,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+									Tapped="Logout"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+          
+            </StackLayout>
+            <StackLayout>
+                <ScrollView>
+                    <Grid  RowSpacing="2" ColumnSpacing="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"  />
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Row="0" Grid.Column="0"  BackgroundColor="#fcfcfc" Padding="10" >
+                            <Image Source="drugs.png" WidthRequest="50"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="ShopDrug"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Shop Drugs" TextColor="#000000" HorizontalOptions="Center" FontSize="12"/>
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="1" BackgroundColor="#fcfcfc" Padding="10">
+                            <Image Source="herbal.png" WidthRequest="50"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+									Tapped="ShopHerbal"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Shop Herbals" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+
+                        </StackLayout>
+
+                        <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="#fcfcfc" Padding="10">
+                            <Image Source="sundries.png" WidthRequest="50"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+									Tapped="ShopSundries"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Shop Sundries" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="#fcfcfc" Padding="10">
+                            <Image Source="devices.png" WidthRequest="50"   >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+									 Tapped="ShopDevices"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Shop Devices" TextColor="#000000" HorizontalOptions="Center" FontSize="12"  />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="#fcfcfc"  Padding="10">
+                            <Image Source="advert.png" WidthRequest="50"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="ShowDeal"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="New Deals" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="#fcfcfc" Padding="10">
+                            <Image  Source="settings.png" WidthRequest="50"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="Settings"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Settings" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+
+                        </StackLayout>
+
+
+                        <StackLayout Grid.Row="3" Grid.Column="0" BackgroundColor="#fcfcfc" Padding="10">
+                            <Image Source="ad.png" WidthRequest="50"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="PostAd"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Post Ad" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+
+                        </StackLayout>
+                        <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="#fcfcfc"  Padding="10">
+                            <Image  Source="need.png" WidthRequest="50"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="PostNeed"
+                                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="Post Need" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+
+                        </StackLayout>
+
+
+
+
+
+
+
+
+
+                    </Grid>
+                   
+                </ScrollView>
+
+            </StackLayout>
+            <StackLayout  Orientation="Vertical" VerticalOptions="EndAndExpand" >
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="dealday2.png"  WidthRequest="300" HorizontalOptions="CenterAndExpand" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                        Tapped="ShowAdvert"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

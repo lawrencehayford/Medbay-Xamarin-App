@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.DealsPage">
+    <ContentPage.Content>
+
+
+        <StackLayout>
+
+            <StackLayout  Padding="10" BackgroundColor="#fe0002" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image Source="backwhite.png" HorizontalOptions="StartAndExpand"  WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="GoToHome"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Text="Deal Of The Day" FontSize="25" TextColor="White" HorizontalOptions="CenterAndExpand"
+                    />
+                    <Image Source="basket.png" HorizontalOptions="EndAndExpand" Margin="0,0,-10,0" WidthRequest="30"/>
+                    <Button HorizontalOptions="EndAndExpand" WidthRequest="40" HeightRequest="40" BorderRadius="20"
+                   Text="0"  x:Name="cartcount" />
+                </StackLayout>
+
+
+            </StackLayout>
+
+
+
+
+            <StackLayout Padding="5,0,5,0"  Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" >
+                <Grid>
+                    <ListView x:Name="ProductList"  HasUnevenRows="true" VerticalOptions="FillAndExpand">
+                        <ListView.ItemTemplate >
+                            <DataTemplate >
+                                <ViewCell>
+                                    <StackLayout Padding="10,10,10,0">
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                            <StackLayout VerticalOptions="Center" Padding="0,0,20,0">
+                                                <Image Source="{Binding Image}" WidthRequest="70" HeightRequest="70" VerticalOptions="Center" />
+
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="Center">
+                                                <Label Text="{Binding ProdName}" FontSize="15" HorizontalTextAlignment="Start" x:Name="Acc_name" TextColor="Black" FontFamily="Avenir-Medium" />
+                                                <Label Text="{Binding Amount}" FontSize="12" HorizontalTextAlignment="Start" x:Name="Amount" TextColor="#3255A4"/>
+                                                <Label Text="{Binding Instock}" FontSize="12" HorizontalTextAlignment="Start" TextColor="#3255A4"/>
+                                              
+
+                                            </StackLayout>
+                                            <StackLayout  VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                               
+                                                    <Label IsVisible="false" x:Name="id" Text="{Binding Id}" />
+                                                <Button Text="Add" HorizontalOptions="End" x:Name="{Binding Id}" ClassId="{Binding Id}" Clicked="Add" />
+
+
+                                            </StackLayout>
+                                        </StackLayout>
+                                      
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
+            </StackLayout>
+
+           
+            
+
+
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                
+                    <Button Text="   Continue   "  Clicked="Confirm" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#3255A4"/>
+
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

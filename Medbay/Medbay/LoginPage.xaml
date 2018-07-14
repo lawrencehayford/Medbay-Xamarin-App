@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.LoginPage" BackgroundColor="#fe0002"
+             >
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="20,5,20,10" VerticalOptions="Center"  x:Name="maincontent"   >
+
+
+            <Label x:Name="loading"/>
+            <Image Source="logo.jpeg" Margin="0,0,0,-26" WidthRequest="100" />
+
+            <Image Source="up.png" WidthRequest="30" Margin="0,0,0,-20" HorizontalOptions="Center"/>
+
+            <StackLayout Padding="20,30,20,20" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Entry Opacity="0.8" Placeholder="UserId" BackgroundColor="Black" TextColor="White" PlaceholderColor="White" HorizontalOptions="FillAndExpand"  x:Name="username" />
+                </StackLayout>
+
+                <StackLayout   Orientation="Horizontal">
+                    <Entry  Opacity="0.8" Placeholder="Password"  BackgroundColor="Black" IsPassword="True" TextColor="White" PlaceholderColor="White"  HorizontalOptions="FillAndExpand" x:Name="password"/>
+
+                </StackLayout>
+
+                <StackLayout   Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+
+                    <Button   Opacity="0.8" Text="Login" TextColor="White" BackgroundColor="#fe0002" Clicked="Login"  x:Name="LoginBtn" HorizontalOptions="FillAndExpand"/>
+
+                </StackLayout>
+
+                <StackLayout   Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,0">
+                    <ActivityIndicator x:Name="ActivityIndicator" Color="White" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout
+                   Orientation="Horizontal" VerticalOptions="End" Margin="0,-50,0,0" HorizontalOptions="CenterAndExpand">
+                    <!-- bottom controls -->
+                    <Label Text=" Forgot Password?  "  x:Name="passwordreset"  FontAttributes="Bold" TextColor="Black"/>
+                    <Label Text=" New User?  "  x:Name="signup"  FontAttributes="Bold" TextColor="CadetBlue"/>
+                </StackLayout>
+
+            </StackLayout>
+            <Image Source="fingerprint.png"  WidthRequest="70" Margin="0,0,0,0" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="Authenticate"
+                                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Margin="0,0,0,0" Text="Use Finger Print" x:Name="finger" TextColor="White" HorizontalOptions="Center" FontAttributes="Bold"/>
+
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

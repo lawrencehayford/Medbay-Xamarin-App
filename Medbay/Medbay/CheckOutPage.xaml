@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.CheckOutPage">
+    <ContentPage.Content>
+          <StackLayout  BackgroundColor="#edeff2" >
+            <StackLayout  Padding="10" BackgroundColor="#fe0002" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image Source="backwhite.png" HorizontalOptions="StartAndExpand"  WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="GoToHome"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Text="Checkout" FontSize="25" TextColor="White" HorizontalOptions="CenterAndExpand"
+                    />
+                    <Image Source="basket.png" HorizontalOptions="EndAndExpand" Margin="0,0,10,0" WidthRequest="30"/>
+                   
+                </StackLayout>
+
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="10,5,10,0"  HorizontalOptions="StartAndExpand">
+                <Label Text="DELIVERY ADDRESS" HorizontalOptions="StartAndExpand" TextColor="Black"  FontSize="17"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal" Margin="10,5,10,0"  HorizontalOptions="FillAndExpand">
+                
+                <Entry Placeholder="Enter your desired location" x:Name="location" HorizontalOptions="FillAndExpand" HeightRequest="100"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="10"  HorizontalOptions="StartAndExpand">
+                <Label Text="CHOOSE PAYMENT METHOD" HorizontalOptions="StartAndExpand" TextColor="Black"  FontSize="17"/>
+                
+               
+            </StackLayout>
+            
+            <StackLayout Padding="10">
+                <TableView Intent="Settings"  HeightRequest="100">
+                    <TableRoot  >
+                        <TableSection  >
+                            <ViewCell Tapped="Highlight" x:Name="cash">
+
+                                <StackLayout Orientation="Horizontal" HeightRequest="50" x:Name="h">
+                                    <Image Source="money.png" WidthRequest="60"/>
+                                    <Label Margin="10,10,0,0" Text=" Cash On Delivery Method" FontSize="17" TextColor="Black" HorizontalOptions="Start"/>
+
+                                    <Image Source="uncheck.png" x:Name="hu" WidthRequest="30" HorizontalOptions="EndAndExpand"/>
+
+                                </StackLayout>
+                            </ViewCell>
+
+                            <ViewCell Tapped="Highlight1"  x:Name="cheque"  >
+
+                                <StackLayout Orientation="Horizontal" HeightRequest="50" x:Name="h1" >
+                                    <Image Source="cheque.png" WidthRequest="60"/>
+                                    <Label Margin="10,10,0,0" Text=" Cheque Payment Method" FontSize="17" TextColor="Black" HorizontalOptions="Start"/>
+                                    <Image Source="uncheck.png" x:Name="hu1" WidthRequest="30" HorizontalOptions="EndAndExpand"/>
+
+                                </StackLayout>
+                            </ViewCell>
+
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
+
+
+
+
+            </StackLayout>
+            
+
+
+            <StackLayout Padding="0,10,0,0" Orientation="Vertical" VerticalOptions="EndAndExpand">
+              <StackLayout Orientation="Horizontal">
+                    <Button Text="   Place Order   " Clicked="Confirm" HorizontalOptions="FillAndExpand"  x:Name="BtnConfirm" TextColor="White" BackgroundColor="#3255A4"/>
+           
+                </StackLayout>
+                 </StackLayout>
+            
+        </StackLayout>
+   
+    </ContentPage.Content>
+</ContentPage>

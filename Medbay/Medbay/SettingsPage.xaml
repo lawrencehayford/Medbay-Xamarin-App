@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.SettingsPage" 
+    Title="Settings Page">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"  />
+    </ContentPage.Padding>
+    <ContentPage.Content >
+
+
+        
+        <StackLayout  >
+            <StackLayout  Padding="10" BackgroundColor="#fe0002" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Image Source="backwhite.png" HorizontalOptions="StartAndExpand"  WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="GoToHome"
+                                NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label Text="Settings" FontSize="25" TextColor="White" HorizontalOptions="StartAndExpand"
+                    />
+                 
+                </StackLayout>
+
+
+            </StackLayout>
+
+
+            <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection >
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Margin="10,10,0,0" Text=" Finger Print Activation" FontSize="17" TextColor="Black" HorizontalOptions="Start"/>
+              
+                            <Switch Margin="0,5,0,0" x:Name="myswitch" IsToggled="false"  HorizontalOptions="EndAndExpand"  ></Switch>
+           
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
