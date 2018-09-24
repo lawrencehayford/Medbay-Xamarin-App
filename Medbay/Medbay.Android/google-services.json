@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "536143005821",
+    "firebase_url": "https://medbay-866ef.firebaseio.com",
+    "project_id": "medbay-866ef",
+    "storage_bucket": "medbay-866ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536143005821:android:ebad7f3b3487d5b5",
+        "android_client_info": {
+          "package_name": "com.mymedbay.Medbay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536143005821-934rv5ahnhesmi92dgcm73125ia3gsvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGd4RpxO2WPdN20jsXB6G1j0ahRaKmKgA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

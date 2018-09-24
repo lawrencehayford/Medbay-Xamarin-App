@@ -22,10 +22,6 @@ bld/
 [Oo]bj/
 [Ll]og/
 
-#Medbay Core Libraries
-
-Medbay/Medbay.Android
-Medbay/Medbay.iOS
 
 
 # Visual Studio 2015 cache/options directory
