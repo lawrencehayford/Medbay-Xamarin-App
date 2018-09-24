@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Push;
 
 namespace Medbay.Droid
 {
@@ -18,13 +20,16 @@ namespace Medbay.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
-
-
+            
             global::Xamarin.Forms.Forms.Init(this, bundle);
-
             LoadApplication(new App());
         }
+        protected override void OnNewIntent(Android.Content.Intent intent)
+        {
+            base.OnNewIntent(intent);
+            Push.CheckLaunchedFromNotification(this, intent);
+        }
+
     }
 }
 

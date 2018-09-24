@@ -111,7 +111,15 @@ namespace Medbay
                     Application.Current.Properties["username"] = obj["email"].ToString();
                     await Application.Current.SavePropertiesAsync();
 
-                    SessionObj.PostItem("name", obj["name"].ToString());
+                    if (!String.IsNullOrEmpty(obj["company_name"].ToString()))
+                    {
+                        SessionObj.PostItem("name", obj["company_name"].ToString());
+                    }
+                    else
+                    {
+                        SessionObj.PostItem("name", obj["name"].ToString());
+                    }
+
                     SessionObj.PostItem("email", obj["email"].ToString());
                     SessionObj.PostItem("tel", obj["tel"].ToString());
                     SessionObj.PostItem("category", obj["category"].ToString());
@@ -119,8 +127,10 @@ namespace Medbay
                     SessionObj.PostItem("country", obj["country"].ToString());
                     SessionObj.PostItem("status", obj["status"].ToString());
                     SessionObj.PostItem("product", obj["product"].ToString());
+                    SessionObj.PostItem("need", obj["need"].ToString());
                     SessionObj.PostItem("usertoken", obj["id"].ToString());
                     SessionObj.PostItem("deal", obj["deal"].ToString());
+                    SessionObj.PostItem("ad_list", obj["ad_list"].ToString());
 
                     if (obj["status"].ToString().Equals("Active"))
                     {
@@ -275,8 +285,18 @@ namespace Medbay
 
                     Application.Current.Properties["username"] = obj["email"].ToString();
                     await Application.Current.SavePropertiesAsync();
+                    
+                    if (!String.IsNullOrEmpty(obj["company_name"].ToString()))
+                    {
+                        SessionObj.PostItem("name", obj["company_name"].ToString());
+                    }
+                    else
+                    {
+                        SessionObj.PostItem("name", obj["name"].ToString());
+                    }
+                    
+                   
 
-                    SessionObj.PostItem("name", obj["name"].ToString());
                     SessionObj.PostItem("email", obj["email"].ToString());
                     SessionObj.PostItem("tel", obj["tel"].ToString());
                     SessionObj.PostItem("category", obj["category"].ToString());
@@ -284,7 +304,10 @@ namespace Medbay
                     SessionObj.PostItem("country", obj["country"].ToString());
                     SessionObj.PostItem("status", obj["status"].ToString());
                     SessionObj.PostItem("product", obj["product"].ToString());
+                    SessionObj.PostItem("need", obj["need"].ToString());
                     SessionObj.PostItem("usertoken", obj["id"].ToString());
+                    SessionObj.PostItem("deal", obj["deal"].ToString());
+                    SessionObj.PostItem("ad_list", obj["ad_list"].ToString());
 
                     if (obj["status"].ToString().Equals("Active"))
                     {

@@ -47,7 +47,7 @@
                         <Image Source="money.png" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
 
 
-                        <Entry Placeholder="Whats the unit price?" TextColor="Black" x:Name="unitprice"  HorizontalOptions="FillAndExpand" />
+                        <Entry Placeholder="Whats the unit price?" Keyboard="Numeric" TextColor="Black" x:Name="unitprice"  HorizontalOptions="FillAndExpand" />
 
                     </StackLayout>
 
@@ -56,16 +56,34 @@
 
                         <Image Source="category.png" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-                        <Picker x:Name="category" Title="Select item category" >
+                        <Picker x:Name="category" Title="Select item category" HorizontalOptions="FillAndExpand"  >
                         </Picker>
 
                     </StackLayout>
 
-                    <StackLayout Padding="5,30,5,0"  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" BackgroundColor="#f4f9f7" Orientation="Horizontal">
+                    <StackLayout Padding="5,5,5,0"  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" BackgroundColor="#f4f9f7" Orientation="Horizontal">
 
-                        <Image Source="add_photo.png" x:Name="photo" WidthRequest="70" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Image Source="expiring.png" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
 
-                        <Label Text="Add Photo" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="Expring Date :" TextColor="Black" Margin="0,15,0,0"/>
+                        <DatePicker x:Name="expDate"  HorizontalOptions="FillAndExpand"  />
+
+                    </StackLayout>
+
+
+
+                    <StackLayout Padding="5,30,5,10"  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" BackgroundColor="#f4f9f7" Orientation="Vertical">
+
+                        <Label Text="Tap To Add A Photo" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                        
+                        <Image Source="add_photo.png" x:Name="photo" WidthRequest="70" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+									Tapped="getImage"
+                                NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+
+                        </Image>
 
                     </StackLayout>
 

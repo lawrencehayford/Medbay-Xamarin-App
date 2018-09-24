@@ -32,6 +32,13 @@
 
                     <StackLayout Padding="5,5,5,0"  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" BackgroundColor="#f4f9f7" Orientation="Horizontal">
 
+                        <Image Source="company.png" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Entry Placeholder="Enter Company Name"  TextColor="Black" x:Name="companyname" HorizontalOptions="FillAndExpand" />
+
+                    </StackLayout>
+
+                    <StackLayout Padding="5,5,5,0"  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" BackgroundColor="#f4f9f7" Orientation="Horizontal">
+
                       <Image Source="contact1.png" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
                        <Entry Placeholder="Enter your telephone" Keyboard="Numeric"  TextColor="Black" x:Name="telephone" HorizontalOptions="FillAndExpand" />
 

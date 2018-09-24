@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Medbay.PostNeedPage">
+             x:Class="Medbay.AdListPage">
     <ContentPage.Content>
 
 
@@ -17,7 +17,7 @@
                         </Image.GestureRecognizers>
                     </Image>
 
-                    <Label Text="Post A Need" Margin="0,0,0,0" FontSize="25" TextColor="White" HorizontalOptions="StartAndExpand"
+                    <Label Text="Recent AD" Margin="0,0,0,0" FontSize="25" TextColor="White" HorizontalOptions="StartAndExpand"
                                 />
 
                 </StackLayout>
@@ -26,36 +26,47 @@
             </StackLayout>
 
 
-            <StackLayout Padding="10,0,10,0"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <ListView x:Name="lst"  HasUnevenRows="true" 
+            <StackLayout Padding="10,0,10,0"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                <ListView x:Name="lst"  HasUnevenRows="true"  VerticalOptions="FillAndExpand"  
                   >
-                    <ListView.ItemTemplate >
+                    <ListView.ItemTemplate  >
                         <DataTemplate >
-                            <ViewCell>
+                            <ViewCell >
                                 <StackLayout Padding="5,10,10,5" HorizontalOptions="FillAndExpand" >
                                     <StackLayout HorizontalOptions="FillAndExpand"  Orientation="Horizontal">
-
                                         <StackLayout HorizontalOptions="Start" Orientation="Vertical" WidthRequest="100">
-                                            <Image Source="user_circle.png" WidthRequest="70" HorizontalOptions="Start"/>
-                                            <Label Text="{Binding User}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="8"/>
+                                            <Image Source="{Binding Image}" WidthRequest="70" HeightRequest="70" HorizontalOptions="Start"/>
+                                            <Label Text="{Binding ProdName}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="8"/>
                                         </StackLayout>
 
-                                        <StackLayout HorizontalOptions="Start">
-                                            <Label Text="{Binding ProdName}" Margin="0,10,0,0"  HorizontalTextAlignment="Start" FontSize="13"  TextColor="Black" HorizontalOptions="StartAndExpand" />
+                                        <!--<StackLayout HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Quantity}" Margin="0,10,0,0"  HorizontalTextAlignment="Start" FontSize="13"  TextColor="Black" HorizontalOptions="Start" />
 
                                         </StackLayout>
+                                       
+                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding Quantity}" Margin="0,10,0,0" HorizontalTextAlignment="Start" FontSize="15" TextColor="Brown" HorizontalOptions="StartAndExpand" />
+
+                                        </StackLayout>
+                                        -->
+                                        
                                       
 
+                                        <StackLayout HorizontalOptions="Start" Orientation="Vertical" WidthRequest="200">
+                                            <Label Text="{Binding Manufacturer}" Margin="0,0,0,0" HorizontalTextAlignment="Start" FontSize="13"  TextColor="Black" HorizontalOptions="StartAndExpand" />
+                                           
+                                        </StackLayout>
+
                                         <StackLayout HorizontalOptions="EndAndExpand" Orientation="Vertical" WidthRequest="100">
-                                            <Image  Source="phone.png" WidthRequest="50" ClassId="{Binding Tel}" HorizontalOptions="EndAndExpand" >
+                                            <Image  Source="phone.png" WidthRequest="50" ClassId="{Binding Contact}" HorizontalOptions="EndAndExpand" >
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer
                                                     Tapped="MakeCall"
                                                        
                                                     NumberOfTapsRequired="1" />
-                                                </Image.GestureRecognizers>
-                                            </Image>
-                                            <Label Text="{Binding Tel}" Margin="0,-5,0,0" HorizontalTextAlignment="End" Font="Bold,10"   TextColor="Black" HorizontalOptions="EndAndExpand" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                            <Label Text="{Binding Contact}" Margin="0,-5,0,0" HorizontalTextAlignment="End" Font="Bold,10"   TextColor="Black" HorizontalOptions="EndAndExpand" />
                                             <Label Text="Tap to call" Margin="0,-5,0,0" HorizontalTextAlignment="End" FontSize="8"  TextColor="Black" HorizontalOptions="EndAndExpand" />
 
                                         </StackLayout>
@@ -76,7 +87,7 @@
 
             <StackLayout Padding="0,0,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
                 <StackLayout Orientation="Horizontal">
-                    <Button Text="   Post A Need   "  Clicked="Confirm" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#3255A4"/>
+                    <Button Text="   Post An Ad   "  Clicked="Confirm" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#3255A4"/>
 
                 </StackLayout>
             </StackLayout>

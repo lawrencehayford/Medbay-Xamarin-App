@@ -22,10 +22,10 @@
                 <ScrollView>
                     <Grid  RowSpacing="2" ColumnSpacing="2">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="100"  />
-                            <RowDefinition Height="100" />
-                            <RowDefinition Height="100" />
-                            <RowDefinition Height="100" />
+                            <RowDefinition Height="90"  />
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="90" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -111,7 +111,7 @@
                                 NumberOfTapsRequired="1" />
                                 </Image.GestureRecognizers>
                             </Image>
-                            <Label Text="Post Ad" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+                            <Label Text="View Ads" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
 
                         </StackLayout>
                         <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="#fcfcfc"  Padding="10">
@@ -122,7 +122,7 @@
                                 NumberOfTapsRequired="1" />
                                 </Image.GestureRecognizers>
                             </Image>
-                            <Label Text="Post Need" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
+                            <Label Text="View Needs" TextColor="#000000" HorizontalOptions="Center" FontSize="12" />
 
                         </StackLayout>
 

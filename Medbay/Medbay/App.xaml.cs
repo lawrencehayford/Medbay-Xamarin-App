@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Push;
 
 using Xamarin.Forms;
 
@@ -12,9 +14,11 @@ namespace Medbay
 		public App ()
 		{
 			InitializeComponent();
-
-			MainPage = new Medbay.MainPage();
+           AppCenter.Start("e97a62ab-7f0a-4fef-99e2-d3c5d74a2db5", typeof(Push));
+             
+            MainPage = new Medbay.MainPage();
 		}
+
 
 		protected override void OnStart ()
 		{

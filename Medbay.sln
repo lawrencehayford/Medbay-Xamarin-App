@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medbay.iOS", "Medbay\Medbay
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Medbay", "Medbay\Medbay\Medbay.shproj", "{5A004273-CEB3-4286-9048-49B674BABC67}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EF0CF628-97BF-418C-82BA-CB8FE1AE986D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Medbay\Medbay\Medbay.projitems*{28d01d60-7ea7-43eb-a2d2-648dd3b90db4}*SharedItemsImports = 4

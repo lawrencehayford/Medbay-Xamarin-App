@@ -30,6 +30,13 @@ namespace Medbay
                     await DisplayAlert("Alert", "Missing full name input required!", "OK");
                     return;
                 }
+                else if (String.IsNullOrEmpty(companyname.Text))
+                {
+
+                    await DisplayAlert("Alert", "Missing Company Name input required!", "OK");
+                    return;
+                }
+
                 else if (String.IsNullOrEmpty(telephone.Text))
                 {
                    
@@ -73,6 +80,7 @@ namespace Medbay
 
                 //fullname,telephone,email,country,password,repassword
                 var postData = "fullname=" + fullname.Text;
+                postData += "&companyname=" + companyname.Text;
                 postData += "&telephone=" + telephone.Text;
                 postData += "&email=" + email.Text;
                 postData += "&country=" + country.Text;

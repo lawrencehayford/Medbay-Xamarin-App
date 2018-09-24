@@ -17,29 +17,38 @@ using System.Collections.ObjectModel;
 namespace Medbay
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PostNeedPage : ContentPage
+	public partial class AdListPage : ContentPage
 	{
         SessionStorage SessionObj = new SessionStorage();
         JArray obj;
-        ObservableCollection<NeedList> List = new ObservableCollection<NeedList>();
+        ObservableCollection<AddList> List = new ObservableCollection<AddList>();
 
-        public PostNeedPage ()
+        public AdListPage ()
 		{
 			InitializeComponent ();
 
-            obj = JArray.Parse(SessionObj.GetItem("need"));
+            obj = JArray.Parse(SessionObj.GetItem("ad_list"));
             lst.ItemsSource = List;
             lst.SelectedItem = null; // de-select the row
+
             var products = obj;
             foreach (var product in products)
             {
-
-                List.Add(new NeedList()
+                var ProdImg = "noimage.png";
+                var FileName = (string)product["filename"];
+               
+                if (FileName.Length > 2)
+                {
+                    ProdImg = "http://www.mymedbay.com/larahome/public/products/" + FileName;
+                }
+                var ProdDescription = (string)product["description"];
+                List.Add(new AddList()
                     {
-                        ProdName = (string)product["ItemName"]+ " :" + (string)product["Quantity"] + "pcs",
-                        Tel = (string)product["RequestorTel"],
-                        User = (string)product["Username"],
-                    
+                        ProdName = (string)product["productname"],
+                        Manufacturer = " "+ ProdDescription+"\n Posted By: "+(string)product["manufacturer"]+ "\n Price: GHS" + (string)product["price"]+"\n Quantity: " +(string)product["quantity"] + "\n Expiring: -" + (string)product["expiring"],
+                        Image = ProdImg,
+                        Contact = (string)product["tel"]
+
 
                 });
 
@@ -65,13 +74,25 @@ namespace Medbay
         {
             
 
-           await this.Navigation.PushModalAsync(new PostNeedFinalPage());
+           await this.Navigation.PushModalAsync(new PostAdPage());
            
 
         }
 
-       
-        protected  override void OnAppearing()
+         void MakeCall(object sender, EventArgs e)
+        {
+            
+            
+            var ImageTel = (Image)sender;
+            var Contact = ImageTel.ClassId;
+            System.Diagnostics.Debug.WriteLine("Number To call :" + Contact);
+            Device.OpenUri(new Uri("tel://"+Contact));
+            return;
+        }
+
+
+
+        protected override void OnAppearing()
         {
 
 
@@ -87,17 +108,5 @@ namespace Medbay
 
 
         }
-
-        void MakeCall(object sender, EventArgs e)
-        {
-
-
-            var ImageTel = (Image)sender;
-            var Contact = ImageTel.ClassId;
-            System.Diagnostics.Debug.WriteLine("Number To call :" + Contact);
-            Device.OpenUri(new Uri("tel://" + Contact));
-            return;
-        }
-
     }
 }

@@ -28,6 +28,8 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ShopDealPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)PostAdPage.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)PostNeedPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)PostNeedFinalPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AdListPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -48,8 +50,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)usedclasses\AddList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)usedclasses\DealCart.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)usedclasses\ItemCart.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)usedclasses\NeedList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)usedclasses\SearchCart.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
@@ -89,6 +93,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)PostNeedPage.xaml.cs">
       <DependentUpon>PostNeedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PostNeedFinalPage.xaml.cs">
+      <DependentUpon>PostNeedFinalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AdListPage.xaml.cs">
+      <DependentUpon>AdListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)usedclasses\GetOnlineRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)usedclasses\SessionStorage.cs" />

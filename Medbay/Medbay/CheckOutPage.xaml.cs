@@ -69,6 +69,7 @@ namespace Medbay
                 postData += "&usertoken=" + SessionObj.GetItem("usertoken").Trim();
                 postData += "&name=" + SessionObj.GetItem("name");
                 postData += "&cart=" + SessionObj.GetItem("ProductList");
+                postData += "&tel=" + SessionObj.GetItem("tel");
                 postData += "&total=" + SessionObj.GetItem("Total").Trim();
                 postData += "&paytype=" + PayType.ToString();
                 postData += "&address=" + location.Text;

@@ -17,7 +17,7 @@ namespace Medbay
     public partial class DealsPage : ContentPage
     {
         SessionStorage SessionObj = new SessionStorage();
-        JObject obj;
+        JArray obj;
         ObservableCollection<DealCart> SearchList = new ObservableCollection<DealCart>();
 
 
@@ -27,7 +27,7 @@ namespace Medbay
         {
             InitializeComponent();
             System.Diagnostics.Debug.WriteLine("Data :" + SessionObj.GetItem("deal"));
-            obj = JObject.Parse(SessionObj.GetItem("deal"));
+            obj = JArray.Parse(SessionObj.GetItem("deal"));
 
             //clear all list items
             SessionStorage.GProductId.Clear();
@@ -43,9 +43,9 @@ namespace Medbay
             foreach (var product in obj)
             {
 
-                System.Diagnostics.Debug.WriteLine("----- :" + (string)product.Value["productname"]);
+                System.Diagnostics.Debug.WriteLine("----- :" + (string)product["productname"]);
                 var ProdImg = "noimage.png";
-                var file = (string)product.Value["filename"];
+                var file = (string)product["filename"];
                 if (file.Length > 2)
                 {
                     ProdImg = "http://www.mymedbay.com/larahome/public/products/" + file;
@@ -53,12 +53,12 @@ namespace Medbay
 
                 SearchList.Add(new DealCart()
                 {
-                    ProdName = (string)product.Value["productname"],
-                    Manufacturer = (string)product.Value["manufacturer"],
-                    Amount = "GHS " + (string)product.Value["price"],
-                    Instock = (string)product.Value["quantity"] + " in stock",
+                    ProdName = (string)product["productname"],
+                    Manufacturer = (string)product["manufacturer"],
+                    Amount = "GHS " + (string)product["price"],
+                    Instock = (string)product["quantity"] + " in stock",
                     Image = ProdImg,
-                    Id = (string)product.Value["id"],
+                    Id = (string)product["id"],
 
                 });
 
@@ -131,8 +131,8 @@ namespace Medbay
                 foreach (var product in obj)
                 {
                     //add to ProductListToSend to be sent to next page
-                    if ((string)product.Value["id"] == SessionObj.GetItem("id")) {
-                        if ((int)product.Value["quantity"] < Int32.Parse(SessionObj.GetItem("returnQuantity"))) {
+                    if ((string)product["id"] == SessionObj.GetItem("id")) {
+                        if ((int)product["quantity"] < Int32.Parse(SessionObj.GetItem("returnQuantity"))) {
 
                             DisplayAlert("Invalid", "Your Quantity entered is greater than the stock quantity", "OK");
                             return;
@@ -140,13 +140,13 @@ namespace Medbay
                         }
 
                         //storring details in a list
-                        SessionStorage.GProductId.Add((string)product.Value["id"]);
-                        SessionStorage.GProductname.Add((string)product.Value["productname"]);
-                        SessionStorage.GProductCategory.Add((string)product.Value["category"]);
-                        SessionStorage.GProductUnitPrice.Add((decimal)product.Value["price"]);
-                        SessionStorage.GProductDescription.Add((string)product.Value["description"]);
-                        SessionStorage.GProductFilename.Add((string)product.Value["filename"]);
-                        SessionStorage.GProductManufacturer.Add((string)product.Value["manufacturer"]);
+                        SessionStorage.GProductId.Add((string)product["id"]);
+                        SessionStorage.GProductname.Add((string)product["productname"]);
+                        SessionStorage.GProductCategory.Add((string)product["category"]);
+                        SessionStorage.GProductUnitPrice.Add((decimal)product["price"]);
+                        SessionStorage.GProductDescription.Add((string)product["description"]);
+                        SessionStorage.GProductFilename.Add((string)product["filename"]);
+                        SessionStorage.GProductManufacturer.Add((string)product["manufacturer"]);
                         SessionStorage.GProductPurchasedQuantity.Add(SessionObj.GetItem("returnQuantity"));
                        
                     }

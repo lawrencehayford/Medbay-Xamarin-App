@@ -66,7 +66,8 @@ namespace Medbay
 
         async void PostAd(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new PostAdPage());
+            
+            await Navigation.PushModalAsync(new AdListPage());
         }
 
         async void PostNeed(object sender, EventArgs e)

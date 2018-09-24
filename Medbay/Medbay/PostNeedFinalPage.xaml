@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medbay.PostNeedFinalPage">
+    <ContentPage.Content>
+       
+            <StackLayout  Orientation="Vertical" >
+                <StackLayout  Padding="10" BackgroundColor="#fe0002" HorizontalOptions="FillAndExpand" VerticalOptions="End" Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Image Source="backwhite.png" HorizontalOptions="StartAndExpand"  WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+                                            Tapped="GoToHome"
+                                            NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Label Text="Post A Need" Margin="0,0,0,0" FontSize="25" TextColor="White" HorizontalOptions="StartAndExpand"
+                                />
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+
+
+            <ScrollView Orientation = "Vertical" VerticalOptions="FillAndExpand"  >
+                <StackLayout  Margin="20,5,20,0">
+
+                    <StackLayout VerticalOptions="Center" Padding="5,0,0,0"  HorizontalOptions="Center" WidthRequest="330" BackgroundColor="#f4f9f7" Orientation="Horizontal">
+
+                        <Image Source="drugs.png" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Entry x:Name="itemname" TextColor="Black" Placeholder="Enter product name and description" HorizontalOptions="FillAndExpand"   />
+
+                    </StackLayout>
+
+                    <StackLayout Padding="5,5,5,0"  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" BackgroundColor="#f4f9f7" Orientation="Horizontal">
+
+                      <Image Source="quantity.png" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                       <Entry Placeholder="How much do you want?" Keyboard="Numeric"  TextColor="Black" x:Name="itemquantity" HorizontalOptions="FillAndExpand" />
+
+                    </StackLayout>
+
+                   
+
+
+                 
+                </StackLayout>
+               
+
+            </ScrollView>
+
+
+
+
+            <StackLayout Padding="0,10,0,0" Orientation="Vertical" VerticalOptions="EndAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                    <Button Text="   Confirm   " x:Name="BtnConfirm" Clicked="BtnConfirm_Clicked" HorizontalOptions="FillAndExpand" TextColor="White" BackgroundColor="#fe0002"/>
+
+                    </StackLayout>
+                </StackLayout>
+
+
+            </StackLayout>
+     
+    </ContentPage.Content>
+</ContentPage>
